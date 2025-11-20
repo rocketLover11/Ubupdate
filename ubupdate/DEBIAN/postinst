@@ -13,7 +13,7 @@ if [ ! -f "$SUDOERS_FILE" ]; then
 fi
 
 systemctl daemon-reload
-systemctl enable --now ubuntu-updater.timer
+systemctl enable --now ubupdate.timer
 echo "Ubupdate will now update your system every two hours."
 
 exit 0
