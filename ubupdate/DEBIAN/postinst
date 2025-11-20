@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+
+if ! java --version >/dev/null 2>&1; then
+    apt update
+    apt -y install default-jre
+fi
+
+SUDOERS_FILE="/etc/sudoers.d/ubupdate"
+if [ ! -f "$SUDOERS_FILE" ]; then
+    echo "$SUDO_USER ALL=(ALL) NOPASSWD: /usr/bin/apt" > "$SUDOERS_FILE"
+    chmod 440 "$SUDOERS_FILE"
+fi
+
+systemctl daemon-reload
+systemctl enable --now ubuntu-updater.timer
+echo "Ubupdate will now update your system every two hours."
+
+exit 0

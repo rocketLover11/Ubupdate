@@ -1,0 +1,8 @@
+Package: ubupdate
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Gideon Fisher <gideonafisher@icloud.com>
+Description: Java-based auto-updater for Ubuntu and other Debian based systems. Runs updates periodically so you don't have to.
+Depends: sudo

@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Ubupdate every 2 hours
+
+[Timer]
+OnUnitActiveSec=2h
+Persistent=true
+
+[Install]
+WantedBy=timers.target

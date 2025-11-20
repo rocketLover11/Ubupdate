@@ -1,0 +1,7 @@
+[Unit]
+Description=Ubuntu Auto-Updater (Java)
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=java /usr/local/bin/ubupdate.jar
